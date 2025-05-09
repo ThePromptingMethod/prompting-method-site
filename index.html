@@ -1,21 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Prompting Method</title>
+
+    <!-- ✅ Favicon + Manifest -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- ✅ Open Graph (for Facebook, LinkedIn, etc.) -->
+    <meta property="og:title" content="The Prompting Method" />
+    <meta property="og:description" content="Prompting is an art. Learn the method. Tools. Language. Imagination." />
+    <meta property="og:image" content="https://www.thepromptingmethod.com/promptingmethod.png" />
+    <meta property="og:url" content="https://www.thepromptingmethod.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- ✅ Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The Prompting Method" />
+    <meta name="twitter:description" content="Prompting is an art. Learn the method." />
+    <meta name="twitter:image" content="https://www.thepromptingmethod.com/promptingmethod.png" />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Custom styles for brutalist/editorial look */
         body {
-            /* Off-white or warm paper beige background */
-            background-color: #f5f5dc; /* Warm beige */
-            font-family: 'Helvetica Neue', 'Akzidenz-Grotesk', sans-serif; /* Preferred fonts */
-            color: #1a1a1a; /* Charcoal/Matte Black text */
+            background-color: #f5f5dc;
+            font-family: 'Helvetica Neue', 'Akzidenz-Grotesk', sans-serif;
+            color: #1a1a1a;
             line-height: 1.5;
         }
 
-        /* Subtle grain or halftone texture - using pseudo-element for overlay */
         body::before {
             content: '';
             position: fixed;
@@ -23,49 +42,46 @@
             left: 0;
             right: 0;
             bottom: 0;
-            pointer-events: none; /* Allow clicks/interaction underneath */
-            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAOklEQVQImWP4//8/AylgYGDgYmBgYGVlZfD39////3+gKCgoKysr/w8MDHz+////MzIy/g8MDACgLwP/v5Y+3wAAAABJRU5ErkJggg=='); /* Simple grain pattern */
-            opacity: 0.1; /* Subtle opacity */
-            z-index: -1; /* Behind content */
+            pointer-events: none;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAOklEQVQImWP4//8/AylgYGDgYmBgYGVlZfD39////3+gKCgoKysr/w8MDHz+////MzIy/g8MDACgLwP/v5Y+3wAAAABJRU5ErkJggg==');
+            opacity: 0.1;
+            z-index: -1;
         }
 
-        /* Brutalist button style */
         .btn-brutalist {
             display: block;
             width: 100%;
-            padding: 1rem 1.5rem; /* Thumb-friendly padding */
-            min-height: 44px; /* Minimum touch target size */
+            padding: 1rem 1.5rem;
+            min-height: 44px;
             text-align: center;
             font-weight: bold;
             text-transform: uppercase;
-            border: 2px solid #1a1a1a; /* Matte black border */
-            background-color: #1a1a1a; /* Matte black background */
-            color: #f5f5dc; /* Beige text */
+            border: 2px solid #1a1a1a;
+            background-color: #1a1a1a;
+            color: #f5f5dc;
             transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
-            box-shadow: 4px 4px 0px 0px #1a1a1a; /* Brutalist shadow */
-            border-radius: 0; /* No rounded corners */
+            box-shadow: 4px 4px 0px 0px #1a1a1a;
+            border-radius: 0;
         }
 
         .btn-brutalist:hover {
             background-color: #f5f5dc;
             color: #1a1a1a;
-            box-shadow: 4px 4px 0px 0px #1a1a1a; /* Keep shadow on hover */
         }
 
-        /* Outlined button style */
         .btn-outlined {
             display: block;
             width: 100%;
-            padding: 1rem 1.5rem; /* Thumb-friendly padding */
-            min-height: 44px; /* Minimum touch target size */
+            padding: 1rem 1.5rem;
+            min-height: 44px;
             text-align: center;
             font-weight: bold;
             text-transform: uppercase;
-            border: 2px solid #1a1a1a; /* Matte black border */
-            background-color: transparent; /* Transparent background */
-            color: #1a1a1a; /* Matte black text */
+            border: 2px solid #1a1a1a;
+            background-color: transparent;
+            color: #1a1a1a;
             transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
-            border-radius: 0; /* No rounded corners */
+            border-radius: 0;
         }
 
         .btn-outlined:hover {
@@ -73,32 +89,24 @@
             color: #f5f5dc;
         }
 
-        /* Small caps style */
         .small-caps {
             font-variant: small-caps;
         }
 
-        /* Monospace font for social proof */
         .font-mono-brutalist {
-             font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
         }
 
-        /* Optional deep amber accent color */
         .text-amber-accent {
-            color: #ffbf00; /* Example deep amber */
+            color: #ffbf00;
         }
     </style>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body class="p-6 md:p-12">
 
     <header class="text-center mb-16 md:mb-24">
         <div class="inline-block mb-8">
-             <img src="/files/promptingmethod.jpg" alt="The Prompting Method Logo" class="w-24 h-auto mx-auto">
+            <img src="/promptingmethod.png" alt="The Prompting Method Logo" class="w-24 h-auto mx-auto">
         </div>
     </header>
 
@@ -116,7 +124,7 @@
     <section class="mb-16 md:mb-24">
         <div class="w-full h-64 md:h-96 bg-gray-300 flex items-center justify-center text-gray-600 text-sm">
             [ Full-width Abstract Graphic / Photo Placeholder ]
-            </div>
+        </div>
     </section>
 
     <section class="mb-16 md:mb-24 grid grid-cols-1 md:grid-cols-3 gap-8">
