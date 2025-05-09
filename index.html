@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Prompting Method</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for brutalist/editorial look */
+        body {
+            /* Off-white or warm paper beige background */
+            background-color: #f5f5dc; /* Warm beige */
+            font-family: 'Helvetica Neue', 'Akzidenz-Grotesk', sans-serif; /* Preferred fonts */
+            color: #1a1a1a; /* Charcoal/Matte Black text */
+            line-height: 1.5;
+        }
+
+        /* Subtle grain or halftone texture - using pseudo-element for overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none; /* Allow clicks/interaction underneath */
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAOklEQVQImWP4//8/AylgYGDgYmBgYGVlZfD39////3+gKCgoKysr/w8MDHz+////MzIy/g8MDACgLwP/v5Y+3wAAAABJRU5ErkJggg=='); /* Simple grain pattern */
+            opacity: 0.1; /* Subtle opacity */
+            z-index: -1; /* Behind content */
+        }
+
+        /* Brutalist button style */
+        .btn-brutalist {
+            display: block;
+            width: 100%;
+            padding: 1rem 1.5rem; /* Thumb-friendly padding */
+            min-height: 44px; /* Minimum touch target size */
+            text-align: center;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: 2px solid #1a1a1a; /* Matte black border */
+            background-color: #1a1a1a; /* Matte black background */
+            color: #f5f5dc; /* Beige text */
+            transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+            box-shadow: 4px 4px 0px 0px #1a1a1a; /* Brutalist shadow */
+            border-radius: 0; /* No rounded corners */
+        }
+
+        .btn-brutalist:hover {
+            background-color: #f5f5dc;
+            color: #1a1a1a;
+            box-shadow: 4px 4px 0px 0px #1a1a1a; /* Keep shadow on hover */
+        }
+
+        /* Outlined button style */
+        .btn-outlined {
+            display: block;
+            width: 100%;
+            padding: 1rem 1.5rem; /* Thumb-friendly padding */
+            min-height: 44px; /* Minimum touch target size */
+            text-align: center;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: 2px solid #1a1a1a; /* Matte black border */
+            background-color: transparent; /* Transparent background */
+            color: #1a1a1a; /* Matte black text */
+            transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+            border-radius: 0; /* No rounded corners */
+        }
+
+        .btn-outlined:hover {
+            background-color: #1a1a1a;
+            color: #f5f5dc;
+        }
+
+        /* Small caps style */
+        .small-caps {
+            font-variant: small-caps;
+        }
+
+        /* Monospace font for social proof */
+        .font-mono-brutalist {
+             font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        }
+
+        /* Optional deep amber accent color */
+        .text-amber-accent {
+            color: #ffbf00; /* Example deep amber */
+        }
+    </style>
+</head>
+<body class="p-6 md:p-12">
+
+    <header class="text-center mb-16 md:mb-24">
+        <div class="inline-block mb-8">
+             <img src="/files/promptingmethod.jpg" alt="The Prompting Method Logo" class="w-24 h-auto mx-auto">
+        </div>
+    </header>
+
+    <section class="text-center mb-16 md:mb-24">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">Prompting is an art.<br>Learn the method.</h1>
+        <p class="small-caps text-lg md:text-xl tracking-wider">Tools. Language. Imagination.</p>
+    </section>
+
+    <section class="max-w-sm mx-auto mb-16 md:mb-24 grid grid-cols-1 gap-4">
+        <a href="YOUR_GUMROAD_LINK" target="_blank" class="btn-brutalist">Get Packs & Guides</a>
+        <a href="YOUR_MERCH_LINK" target="_blank" class="btn-brutalist">Get Merch</a>
+        <a href="YOUR_TALLY_SO_LINK" target="_blank" class="btn-outlined">Join the Newsletter</a>
+    </section>
+
+    <section class="mb-16 md:mb-24">
+        <div class="w-full h-64 md:h-96 bg-gray-300 flex items-center justify-center text-gray-600 text-sm">
+            [ Full-width Abstract Graphic / Photo Placeholder ]
+            </div>
+    </section>
+
+    <section class="mb-16 md:mb-24 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="border-t-2 border-b-2 border-black py-4">
+            <h3 class="text-xl md:text-2xl font-bold mb-2">Write better. Think sharper.</h3>
+            <p>Elevate your creative output and analytical skills with structured prompting techniques.</p>
+        </div>
+        <div class="border-t-2 border-b-2 border-black py-4">
+            <h3 class="text-xl md:text-2xl font-bold mb-2">For creators, researchers, and AI minds.</h3>
+            <p>Whether you're writing, exploring ideas, or working with AI, the method applies.</p>
+        </div>
+        <div class="border-t-2 border-b-2 border-black py-4">
+            <h3 class="text-xl md:text-2xl font-bold mb-2">No fluff. Just results.</h3>
+            <p>Focus on practical, actionable methods designed for tangible improvements.</p>
+        </div>
+    </section>
+
+    <footer class="text-center text-xs text-gray-600 uppercase tracking-wider">
+        <p class="mb-2">&copy; The Prompting Method</p>
+        <nav>
+            <a href="YOUR_GUMROAD_LINK" class="hover:underline mx-1">Prompts</a> |
+            <a href="YOUR_MERCH_LINK" class="hover:underline mx-1">Merch</a> |
+            <a href="YOUR_INSTAGRAM_LINK" class="hover:underline mx-1">Instagram</a>
+        </nav>
+    </footer>
+
+</body>
+</html>
